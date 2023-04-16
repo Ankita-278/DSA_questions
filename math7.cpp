@@ -5,8 +5,29 @@
 #include<iostream>
 using namespace std;
 
+int jump(int arr[],int n){
+    int reachable=0;
+    int curr=0;
+    int count=0;
+    for(int i=0;i<n-1;i++){
+        reachable=max(reachable,i+arr[i]);
+        if(i==curr){
+            count++;
+            curr=reachable;
+            if(curr>=n-1)
+            return count;
+        }
+    }
+    return -1;
+}
 int main(){
-    
+    int n;
+    cin>>n;
+    int arr[100];
+     for(int i=0;i<n;i++){
+        cin>>arr[i];
+     }
+ cout<<jump(arr,n);
     return 0;
 }
 
