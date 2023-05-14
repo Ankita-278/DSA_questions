@@ -21,6 +21,7 @@ class Solution{
                    int tempB=right;
                    while(right>=0 && B[right]==B[tempB])
                    right--;
+
                }
               else if(target<X){
                   left++;
